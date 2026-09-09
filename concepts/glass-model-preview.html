@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#e9e8e3}html.embed,html.embed body{background:transparent}.embed .hint{display:none}canvas{display:block;cursor:none}.hint{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);padding:9px 14px;border:1px solid #fff8;border-radius:999px;background:#ffffff8c;backdrop-filter:blur(12px);font:11px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#6b6d75;letter-spacing:.05em;pointer-events:none}
+</style></head><body><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script><script type="module">
+import * as THREE from 'three'; import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js'; import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+const embedded=new URLSearchParams(location.search).has('embed');document.documentElement.classList.toggle('embed',embedded);
+const s=new THREE.Scene();s.background=embedded?null:new THREE.Color('#e9e8e3');
+const c=new THREE.PerspectiveCamera(32,innerWidth/innerHeight,.1,100);c.position.set(7,-.1,11);c.lookAt(0,-.45,0);
+const r=new THREE.WebGLRenderer({antialias:true,alpha:embedded});r.setClearAlpha(embedded?0:1);r.setSize(innerWidth,innerHeight);r.setPixelRatio(Math.min(devicePixelRatio,2));r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.ACESFilmicToneMapping;r.toneMappingExposure=1.15;r.shadowMap.enabled=true;document.body.appendChild(r.domElement);
+const controls=new OrbitControls(c,r.domElement);controls.target.set(0,-.45,0);controls.enableDamping=true;controls.dampingFactor=.06;controls.enablePan=true;controls.minDistance=5.5;controls.maxDistance=22;controls.minPolarAngle=.18;controls.maxPolarAngle=Math.PI-.18;controls.update();
+s.add(new THREE.HemisphereLight('#fffaf0','#b9b2a4',.82));let k=new THREE.DirectionalLight('#fff3d7',1.45);k.position.set(-5,7,8);s.add(k);
+// The mouse is the light source. No drawn rays: the glass itself reveals the light
+// through moving specular reflections, transmission and a restrained RGB fringe.
+const pointer=new THREE.Vector2(),raycaster=new THREE.Raycaster(),modelPlane=new THREE.Plane(new THREE.Vector3(0,0,1),-1.05),hit=new THREE.Vector3();
+const halo=new THREE.Mesh(new THREE.SphereGeometry(.18,32,32),new THREE.MeshBasicMaterial({color:'#ffb84f',transparent:true,opacity:.16,blending:THREE.AdditiveBlending,depthWrite:false,depthTest:false,toneMapped:false}));halo.renderOrder=9;s.add(halo);
+const mouseLights=[['#ffd184',0,78],['#ff9f43',.035,20]].map(([color,dx,intensity])=>{const light=new THREE.PointLight(color,intensity,4.6,1.9);light.userData.dx=dx;s.add(light);return light});
+let amberDot=null,dotHome=null,dotTarget=null,dotLocalCenter=new THREE.Vector3(),pointerInside=false;
+function updateLight(e){
+  pointer.x=e.clientX/innerWidth*2-1;pointer.y=1-e.clientY/innerHeight*2;raycaster.setFromCamera(pointer,c);
+  if(!raycaster.ray.intersectPlane(modelPlane,hit))return;
+  if(amberDot&&dotHome)dotTarget.copy(dotHome).add(hit).sub(dotLocalCenter);
+}
+r.domElement.addEventListener('pointermove',updateLight);
+r.domElement.addEventListener('pointerleave',()=>{pointerInside=false;if(dotHome)dotTarget.copy(dotHome)});
+r.domElement.addEventListener('pointerenter',e=>{pointerInside=true;updateLight(e)});
+new GLTFLoader().load('../assets/models/neighbour-glass-rainbow-v5.glb',g=>{
+  s.add(g.scene);g.scene.traverse(o=>{if(o.isMesh&&o.material?.name==='Amber optical glass')amberDot=o});
+  if(amberDot){amberDot.geometry.computeBoundingBox();amberDot.geometry.boundingBox.getCenter(dotLocalCenter);dotHome=amberDot.position.clone();dotTarget=dotHome.clone();}
+});
+function animate(){requestAnimationFrame(animate);controls.update();
+  if(amberDot&&dotTarget){amberDot.position.lerp(dotTarget,pointerInside?.22:.075);const p=dotLocalCenter.clone().add(amberDot.position);halo.position.copy(p);mouseLights.forEach(light=>light.position.copy(p).add(new THREE.Vector3(light.userData.dx,0,.12)))}
+  r.render(s,c)}animate();
+addEventListener('resize',()=>{c.aspect=innerWidth/innerHeight;c.updateProjectionMatrix();r.setSize(innerWidth,innerHeight)});
+</script><div class="hint">黄色玻璃跟随鼠标并照亮画面 · 移出后自动归位</div></body></html>
