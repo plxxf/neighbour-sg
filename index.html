@@ -3,25 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Neighbour is a Singapore software company creating thoughtful digital products and services for everyday users." />
+  <meta name="description" content="Neighbour is a small software company from Singapore creating focused, beautifully crafted products that earn long-term trust." />
   <title>Neighbour — Software made for people</title>
+  <script>document.documentElement.classList.add('js')</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=hero-layout-2" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=english-spacing-1" />
 </head>
 <body>
   <header class="nav-shell">
     <nav class="nav container" aria-label="Main navigation">
       <a class="brand" href="#top" aria-label="Neighbour home">
-        <img src="assets/neighbour-logo.png" alt="Neighbour" />
+        <img src="assets/neighbour-logo.png?v=transparent-2" alt="Neighbour" />
       </a>
       <div class="nav-links">
         <a href="#how">What we do</a>
         <a href="#neighbourhoods">Our approach</a>
         <a href="#stories">Why Neighbour</a>
       </div>
-      <a class="button button-dark nav-cta" href="#join">Work with us <span>↗</span></a>
+      <div class="nav-actions">
+        <button class="lang-toggle" type="button" aria-label="Switch language">中文</button>
+        <a class="button button-dark nav-cta" href="#join">Work with us <span>↗</span></a>
+      </div>
       <button class="menu-button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </nav>
   </header>
@@ -30,8 +34,7 @@
     <section class="hero container">
       <div class="hero-layout">
         <div class="hero-copy-panel">
-          <div class="eyebrow"><span class="status-dot"></span> A software company from Singapore</div>
-          <h1>Software made<br><span>for people.</span></h1>
+          <h1>Hello,<br>welcome to<br><span>Neighbour</span></h1>
           <p class="hero-copy">We design and build thoughtful digital products that solve real problems and make everyday experiences feel beautifully simple.</p>
           <div class="hero-actions">
             <a class="button button-dark" href="#join">Build with Neighbour <span>↗</span></a>
@@ -39,7 +42,7 @@
           </div>
         </div>
         <div class="hero-model-wrap">
-          <iframe class="hero-model" src="concepts/glass-model-preview.html?embed=1&amp;layout=2" title="Interactive Neighbour glass symbol"></iframe>
+          <iframe class="hero-model" src="concepts/glass-model-preview.html?embed=1&amp;layout=2&amp;material=light-glass-1" title="Interactive Neighbour glass symbol"></iframe>
         </div>
       </div>
 
@@ -89,7 +92,7 @@
     </section>
   </main>
 
-  <footer class="footer container"><a class="brand" href="#top"><img src="assets/neighbour-logo.png" alt="Neighbour"></a><p>Software made for people.</p><div><a href="#">LinkedIn</a><a href="#">Privacy</a><a href="#">Terms</a></div><small>© 2026 Neighbour.sg</small></footer>
-  <script src="script.js"></script>
+  <footer class="footer container"><a class="brand" href="#top"><img src="assets/neighbour-logo.png?v=transparent-2" alt="Neighbour"></a><p>Software made for people.</p><div><a href="faq.html">FAQ</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div><small>© 2026 Neighbour.sg</small></footer>
+  <script src="script.js?v=quote-lines-2"></script>
 </body>
 </html>
