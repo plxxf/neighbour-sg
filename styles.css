@@ -43,6 +43,7 @@ body{background:#fffefb}
 .hero-copy-panel h1{font-size:clamp(50px,5.1vw,78px);line-height:.94;white-space:normal}
 .hero-copy-panel h1 span{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:#5869f2;-webkit-text-fill-color:#5869f2}
 html[lang="zh-CN"] .hero-copy-panel h1{letter-spacing:.025em}
+.hero-copy-panel .hero-wordmark{display:block;width:min(100%,520px);height:auto;margin-top:10px}
 .quote-card blockquote,.quote-card .quote-person{transition:opacity .18s ease,transform .22s ease}.quote-card.is-changing blockquote,.quote-card.is-changing .quote-person{opacity:0;transform:translateY(6px)}.quote-nav button{cursor:pointer;transition:background .2s ease,border-color .2s ease,transform .2s ease}.quote-nav button:hover{background:#5869f2;color:#fff;border-color:#5869f2;transform:translateY(-2px)}.quote-nav button:active{transform:translateY(0) scale(.94)}
 
 @media(max-width:800px){.postcode-form{gap:12px}.postcode-form input{height:62px;min-height:62px;padding:0 20px;border-radius:12px;font-size:16px}.postcode-form .button{min-height:62px;padding-block:17px}}
