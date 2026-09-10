@@ -44,6 +44,7 @@ body{background:#fffefb}
 .hero-copy-panel h1 span{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:#5869f2;-webkit-text-fill-color:#5869f2}
 html[lang="zh-CN"] .hero-copy-panel h1{letter-spacing:.025em}
 .hero-copy-panel .hero-wordmark{display:inline-block;width:min(66%,420px);height:auto;margin-left:2px}html[lang="en"] .hero-copy-panel h1{display:flex;align-items:center;gap:8px;white-space:nowrap;font-size:clamp(44px,4.8vw,72px)}
+@media(min-width:621px) and (max-width:900px){html[lang="en"] .hero-copy-panel h1{font-size:36px}.hero-copy-panel .hero-wordmark{width:80%}}
 @media(max-width:620px){html[lang="en"] .hero-copy-panel h1{font-size:38px;gap:6px;justify-content:center}.hero-copy-panel .hero-wordmark{width:62%;margin-left:0}}
 .quote-card blockquote,.quote-card .quote-person{transition:opacity .18s ease,transform .22s ease}.quote-card.is-changing blockquote,.quote-card.is-changing .quote-person{opacity:0;transform:translateY(6px)}.quote-nav button{cursor:pointer;transition:background .2s ease,border-color .2s ease,transform .2s ease}.quote-nav button:hover{background:#5869f2;color:#fff;border-color:#5869f2;transform:translateY(-2px)}.quote-nav button:active{transform:translateY(0) scale(.94)}
 
