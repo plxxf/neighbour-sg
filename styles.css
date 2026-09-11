@@ -113,3 +113,6 @@ html[lang="zh-CN"] #how .section-heading h2{line-height:1.08}
 .conversation-stack>.mini-message{top:48px}.conversation-stack>.mini-reply{top:124px}.conversation-stack>.mini-insight{top:200px}.conversation-stack>.mini-guard{top:276px}.conversation-stack>.mini-care{top:352px}
 .conversation-stack>div b{color:#171821;font-size:16px;font-weight:700;line-height:1.28}.conversation-stack>div small{color:#707381;font-size:12px;font-weight:500;line-height:1.35;letter-spacing:.015em}
 @media(max-width:620px){.conversation-stack>div b{font-size:15px}.conversation-stack>div small{font-size:11.5px}}
+
+/* Keep the lead message balanced with the glass mark on wide screens. */
+@media(min-width:901px){.hero-copy-panel h1,html[lang="en"] .hero-copy-panel h1{font-size:clamp(72px,5.4vw,96px)}.hero-copy-panel .hero-copy{font-size:21px}}

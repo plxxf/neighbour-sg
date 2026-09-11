@@ -20,7 +20,7 @@ function fitHeroTitleToModel() {
   const availableWidth = modelRect.left + heroModelLeft - titleRect.left - 36;
   const currentSize = parseFloat(getComputedStyle(title).fontSize);
   if (contentWidth <= 0 || availableWidth <= 0 || !Number.isFinite(currentSize)) return;
-  const fittedSize = Math.max(72, Math.min(120, currentSize * availableWidth / contentWidth));
+  const fittedSize = Math.max(64, Math.min(96, currentSize * availableWidth / contentWidth));
   title.style.fontSize = `${fittedSize}px`;
 }
 
