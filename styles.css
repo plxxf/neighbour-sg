@@ -124,3 +124,4 @@ html[lang="zh-CN"] #how .section-heading h2{line-height:1.08}
 #how .feature-grid{width:min(100%,1040px);margin-inline:auto}
 
 .footer>p,.footer>div a,.footer>small{font-size:15px}
+.footer>p{color:var(--ink)}
