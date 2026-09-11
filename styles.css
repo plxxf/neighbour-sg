@@ -80,6 +80,8 @@ html[lang="zh-CN"] #how .section-heading h2{line-height:1.08}
 /* Individual cards spring upward under the pointer, then settle back softly. */
 .conversation-stack>.mini-message,.conversation-stack>.mini-reply,.conversation-stack>.mini-insight,.conversation-stack>.mini-guard,.conversation-stack>.mini-care{cursor:pointer;outline:none;transform-origin:center;transition:transform .42s cubic-bezier(.34,1.56,.64,1),box-shadow .32s ease,border-color .32s ease;will-change:transform}
 .mini-message{--card-angle:3deg}.mini-reply{--card-angle:-4deg}.mini-insight{--card-angle:2.5deg}.mini-guard{--card-angle:-2.5deg}.mini-care{--card-angle:1.8deg}
-.conversation-stack>div:hover,.conversation-stack>div:focus-visible{z-index:10;transform:translateY(-20px) rotate(var(--card-angle)) scale(1.025);border-color:rgba(88,105,242,.2);box-shadow:0 34px 70px rgba(76,71,139,.22)}
-.conversation-stack>div:active{transform:translateY(-10px) rotate(var(--card-angle)) scale(.995);transition-duration:.12s}
-@media(prefers-reduced-motion:reduce){.conversation-stack>div{transition:none}.conversation-stack>div:hover,.conversation-stack>div:focus-visible{transform:rotate(var(--card-angle))}}
+.conversation-stack>.mini-message,.conversation-stack>.mini-reply,.conversation-stack>.mini-insight,.conversation-stack>.mini-guard,.conversation-stack>.mini-care{left:50%;width:min(360px,90%);transform:translateX(-50%) rotate(var(--card-angle))}
+.conversation-stack>.mini-message{top:38px}.conversation-stack>.mini-reply{top:108px}.conversation-stack>.mini-insight{top:178px}.conversation-stack>.mini-guard{top:248px}.conversation-stack>.mini-care{top:318px}
+.conversation-stack>div:hover,.conversation-stack>div:focus-visible{z-index:10;transform:translateX(-50%) translateY(-20px) rotate(var(--card-angle)) scale(1.025);border-color:rgba(88,105,242,.2);box-shadow:0 34px 70px rgba(76,71,139,.22)}
+.conversation-stack>div:active{transform:translateX(-50%) translateY(-10px) rotate(var(--card-angle)) scale(.995);transition-duration:.12s}
+@media(prefers-reduced-motion:reduce){.conversation-stack>div{transition:none}.conversation-stack>div:hover,.conversation-stack>div:focus-visible{transform:translateX(-50%) rotate(var(--card-angle))}}
