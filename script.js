@@ -119,6 +119,8 @@ const translations = [
   ['.mini-message small', 'Focused · Useful · Considered', '聚焦 · 实用 · 克制'],
   ['.mini-reply b', 'Built around evidence', '尊重真实的用户证据'],
   ['.mini-reply small', 'Research · Testing · Real use', '研究 · 测试 · 真实使用'],
+  ['.mini-insight b', 'Learn from every release', '从每一次发布中学习'],
+  ['.mini-insight small', 'Measure · Iterate · Improve', '衡量 · 迭代 · 改进'],
   ['.feature-card:nth-child(2) h3', 'Experience comes first', '体验优先'],
   ['.feature-card:nth-child(2) p', 'Software should feel clear, stable, natural and responsive — for different people, devices and ways of using it.', '软件应当清晰、稳定、自然、响应迅速，并平等地服务不同的人。'],
   ['.feature-card:nth-child(3) h3', 'Your information, protected', '重视用户信息安全'],

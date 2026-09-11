@@ -71,3 +71,8 @@ html[lang="zh-CN"] #how .section-heading h2{line-height:1.08}
 @media(min-width:901px){.hero-model-wrap{width:min(100%,680px,calc(100vh - 150px));margin-left:-70px}}
 @media(min-width:621px) and (max-width:900px){.hero-model-wrap{height:auto;margin-top:0}}
 @media(max-width:620px){.hero-model-wrap{height:auto}}
+
+/* A third signal completes the problem-solving story in the lead feature. */
+.mini-insight{position:absolute;top:338px;left:48px;width:310px;padding:18px;background:#fff;border:1px solid #ededf2;border-radius:16px;box-shadow:0 24px 55px rgba(76,71,139,.14);display:flex;align-items:center;gap:12px;transform:rotate(2.5deg)}
+.mini-insight>div{display:flex;flex-direction:column}.mini-insight small{font-size:10px;color:#9597a2}.insight-icon{flex:0 0 36px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#5869f2,#7646ef);color:#fff;font-weight:700}
+@media(max-width:800px){.feature-large{min-height:740px}.mini-insight{top:338px;left:12%;width:72%}}
