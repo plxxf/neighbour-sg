@@ -58,6 +58,7 @@ html[lang="en"] body{letter-spacing:.012em}html[lang="en"] .hero-copy-panel h1{l
 html[lang="zh-CN"] body,html[lang="zh-CN"] button,html[lang="zh-CN"] input,html[lang="zh-CN"] select,html[lang="zh-CN"] textarea{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif}
 html[lang="zh-CN"] #how .section-heading h2{line-height:1.08}
 #join .kicker{font-size:15px;font-weight:700;letter-spacing:.12em}
+@media(min-width:901px){.hero-copy-panel h1{font-size:clamp(64px,5.4vw,84px)}html[lang="en"] .hero-copy-panel h1{font-size:clamp(64px,5.4vw,84px)}.hero-copy-panel .hero-copy{max-width:680px;font-size:22px;line-height:1.6}}
 @media(min-width:801px){#join .cta-content{width:min(1000px,90%)}html[lang="zh-CN"] #join .cta-content>p{max-width:none;white-space:nowrap}html[lang="en"] #join .cta-content>p{width:min(760px,100%);max-width:760px;white-space:normal;text-align:left}}
 @media(min-width:521px) and (max-width:800px){.footer{min-height:150px;grid-template-columns:auto 1fr auto;padding:30px 0;gap:26px}.footer>p{display:none}.footer>div{justify-content:center;flex-wrap:wrap;gap:12px 20px}.footer>div a{font-size:13px;font-weight:600}.footer small{text-align:right}}
 @media(max-width:520px){.footer{min-height:0;grid-template-columns:1fr;padding:42px 0;gap:24px}.footer>p{display:block}.footer>div{justify-content:flex-start;flex-wrap:wrap}.footer small{text-align:left}}
