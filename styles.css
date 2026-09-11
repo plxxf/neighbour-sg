@@ -52,6 +52,7 @@ html[lang="zh-CN"] .hero-copy-panel h1{letter-spacing:.025em}
 
 @media(max-width:800px){.postcode-form{gap:12px}.postcode-form input{height:62px;min-height:62px;padding:0 20px;border-radius:12px;font-size:16px}.postcode-form .button{min-height:62px;padding-block:17px}}
 #how .section-heading>.kicker,#stories .section-heading>.kicker,#join .form-note{display:none}#how .section-heading h2,#stories .section-heading h2{margin-top:0}
+#how .section-heading{max-width:1080px}
 #neighbourhoods .map-card{display:none}#neighbourhoods .community-grid{grid-template-columns:1fr;max-width:760px;text-align:center}#neighbourhoods .community-section p,#neighbourhoods p{margin-left:auto;margin-right:auto}#neighbourhoods .checks{align-items:center}
 html[lang="en"] body,html[lang="en"] button,html[lang="en"] input,html[lang="en"] select,html[lang="en"] textarea{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
 html[lang="en"] body{letter-spacing:.012em}html[lang="en"] .hero-copy-panel h1{letter-spacing:-.035em}html[lang="en"] .section-heading h2,html[lang="en"] .community-section h2,html[lang="en"] .cta-section h2{letter-spacing:-.035em}html[lang="en"] .feature-card h3{letter-spacing:-.02em}
