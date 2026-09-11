@@ -93,7 +93,7 @@ const translations = [
   ['#how .section-heading h2', 'Refined time and again,<br>just to bring this care to you.', '千锤百炼，<br>只为了将这份心意带给你。'],
   ['#how .section-heading p', 'Every piece of software made by Neighbour is held to a high standard.', 'Neighbour出品的每一个软件都贯彻高标准。'],
   ['.feature-large h3', 'Focus on the<br>real problem.', '聚焦真正的问题。'],
-  ['.feature-large .feature-copy > p', 'Every product has one clear purpose. If a feature adds complexity without improving the core experience, we choose not to build it.', '每款产品都必须有清晰的核心用途。如果一个功能增加复杂度，却没有改善核心体验，我们选择不做。'],
+  ['.feature-large .feature-copy > p', 'The problems that keep troubling you are exactly the ones we’re committed to solving.', '那些一直困扰着你的问题，是我们致力于解决的目标。'],
   ['.feature-large .feature-copy > a', 'See how we decide <span>→</span>', '了解我们的取舍 <span>→</span>'],
   ['.mini-message b', 'Clear by default', '清晰，是默认设置'],
   ['.mini-message small', 'Focused · Useful · Considered', '聚焦 · 实用 · 克制'],
