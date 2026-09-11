@@ -8,7 +8,6 @@ const introSequence = [
   document.querySelector('.hero-copy-panel .eyebrow'),
   document.querySelector('.hero-copy-panel h1'),
   document.querySelector('.hero-copy-panel .hero-copy'),
-  document.querySelector('.hero-copy-panel .hero-actions'),
   document.querySelector('.hero-model-wrap')
 ].filter(Boolean);
 
@@ -81,8 +80,6 @@ const translations = [
   ['.eyebrow', '<span class="status-dot"></span> A software company from Singapore', '<span class="status-dot"></span> 一家来自新加坡的软件公司'],
   ['.hero-copy-panel h1', 'Hi, I\'m <img class="hero-wordmark" src="assets/neighbour-logo.svg?v=approved-1" alt="Neighbour">', '你好，<br>欢迎来到<span>邻里</span>'],
   ['.hero-copy-panel .hero-copy', 'As your neighbour, we’re always happy to help.<br>Whenever you need us, we’ll be right here.', '作为你的邻居，我们乐意为你提供帮助。<br>当你需要我们的时候，我们一直在这里。'],
-  ['.hero-actions .button-dark', 'Meet Neighbour <span>↗</span>', '了解 Neighbour <span>↗</span>'],
-  ['.hero-actions .button-light', '<span class="play">▶</span> Our product standard', '<span class="play">▶</span> 我们的产品标准'],
   ['.trust-line > span', 'Designing useful software across industries', '为不同领域设计真正有用的软件'],
   ['#how .kicker', 'THE NEIGHBOUR STANDARD', 'NEIGHBOUR 产品标准'],
   ['#how .section-heading h2', 'Refined time and again,<br>just to bring this care to you.', '千锤百炼，<br>只为了将这份心意带给你。'],
