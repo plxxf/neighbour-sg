@@ -116,3 +116,7 @@ html[lang="zh-CN"] #how .section-heading h2{line-height:1.08}
 
 /* Keep the lead message balanced with the glass mark on wide screens. */
 @media(min-width:901px){.hero-copy-panel h1,html[lang="en"] .hero-copy-panel h1{font-size:clamp(72px,5.4vw,96px)}.hero-copy-panel .hero-copy{font-size:21px}}
+
+/* Rebalance the visual after reducing the principle deck to three cards. */
+.conversation-stack>.mini-message{top:108px}.conversation-stack>.mini-insight{top:198px}.conversation-stack>.mini-guard{top:288px}
+@media(max-width:800px){.feature-large{min-height:700px}.conversation-stack>.mini-message{top:46px}.conversation-stack>.mini-insight{top:142px}.conversation-stack>.mini-guard{top:238px}}
