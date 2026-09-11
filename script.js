@@ -17,7 +17,7 @@ function fitHeroTitleToModel() {
   const wordmarkRect = wordmark.getBoundingClientRect();
   const modelRect = heroModelFrame.getBoundingClientRect();
   const contentWidth = wordmarkRect.right - titleRect.left;
-  const availableWidth = modelRect.left + heroModelLeft - titleRect.left - 12;
+  const availableWidth = modelRect.left + heroModelLeft - titleRect.left - 36;
   const currentSize = parseFloat(getComputedStyle(title).fontSize);
   if (contentWidth <= 0 || availableWidth <= 0 || !Number.isFinite(currentSize)) return;
   const fittedSize = Math.max(72, Math.min(120, currentSize * availableWidth / contentWidth));
