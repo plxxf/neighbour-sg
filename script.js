@@ -81,7 +81,7 @@ const translations = [
   ['.nav-cta', 'Work with us <span>↗</span>', '与我们合作 <span>↗</span>'],
   ['.eyebrow', '<span class="status-dot"></span> A software company from Singapore', '<span class="status-dot"></span> 一家来自新加坡的软件公司'],
   ['.hero-copy-panel h1', 'Hi, I\'m <img class="hero-wordmark" src="assets/neighbour-logo.svg?v=approved-1" alt="Neighbour">', '你好，<br>欢迎来到<span>邻里</span>'],
-  ['.hero-copy-panel .hero-copy', 'We make small, beautifully crafted software that feels natural to use and earns your trust over time.', '我们打造小而精、界面优美、互动流畅，能够被长期信赖的软件。'],
+  ['.hero-copy-panel .hero-copy', 'As your neighbour, we’ll occasionally stop by with a little gift and lend a helping hand.', '作为你的邻居，我们会不定时给你送一些小礼物，为你提供帮助。'],
   ['.hero-actions .button-dark', 'Meet Neighbour <span>↗</span>', '了解 Neighbour <span>↗</span>'],
   ['.hero-actions .button-light', '<span class="play">▶</span> Our product standard', '<span class="play">▶</span> 我们的产品标准'],
   ['.trust-line > span', 'Designing useful software across industries', '为不同领域设计真正有用的软件'],
