@@ -90,3 +90,7 @@ html[lang="zh-CN"] #how .section-heading h2{line-height:1.08}
 /* Bring the closing call-to-action closer to the preceding story card. */
 .stories{padding-bottom:72px}
 @media(max-width:800px){.stories{padding-bottom:56px}}
+
+/* One coherent icon language across the five process cards. */
+.process-icon{flex:0 0 40px;width:40px;height:40px;color:#fff}.process-icon svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.icon-focus{background:linear-gradient(135deg,#ffbf57,#ff965c)}.icon-evidence{background:linear-gradient(135deg,#7b69f5,#5869f2)}.icon-iterate{background:linear-gradient(135deg,#6675f5,#7a45ee)}.icon-security{background:linear-gradient(135deg,#4cc8aa,#5680ee)}.icon-care{background:linear-gradient(135deg,#ffb547,#f47a72)}
+.mini-reply>div{display:flex;flex-direction:column;min-width:0}.mini-reply small{width:auto;padding-left:0}.mini-message>div,.mini-insight>div,.mini-guard>div,.mini-care>div{min-width:0}
