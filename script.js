@@ -32,6 +32,17 @@ window.addEventListener('message', event => {
 
 window.addEventListener('resize', () => requestAnimationFrame(fitHeroTitleToModel));
 
+const processCards = document.querySelectorAll('.conversation-stack > div');
+let processCardLayer = 1;
+processCards.forEach(card => {
+  const promoteCard = () => {
+    processCardLayer += 1;
+    card.style.zIndex = String(processCardLayer);
+  };
+  card.addEventListener('pointerenter', promoteCard);
+  card.addEventListener('focusin', promoteCard);
+});
+
 const introSequence = [
   document.querySelector('.nav-shell'),
   document.querySelector('.hero-copy-panel .eyebrow'),
