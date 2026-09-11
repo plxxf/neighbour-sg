@@ -128,8 +128,8 @@ const principles = [
     zh: ['简单，但不简陋；<br>优美，但不炫技；<br>流畅、可靠，并且值得长期使用。', 'Neighbour 的产品标准', '简单 · 优美 · 可靠']
   },
   {
-    en: ['When revenue or speed conflicts with the core experience and user trust, we choose the latter.', 'The Neighbour decision', 'Experience · Respect · Trust'],
-    zh: ['当收入、开发速度与核心体验或用户信任发生冲突时，我们选择后者。', 'Neighbour 的选择', '体验 · 尊重 · 信任']
+    en: ['Neighbour values your experience. We welcome all your feedback and suggestions.', 'The Neighbour decision', 'Experience · Respect · Trust'],
+    zh: ['Neighbour重视你的体验，欢迎给我们提出任何意见和建议。', 'Neighbour 的选择', '体验 · 尊重 · 信任']
   }
 ];
 let principleIndex = 0;
