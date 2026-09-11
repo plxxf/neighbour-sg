@@ -3,6 +3,20 @@ const navLinks = document.querySelector('.nav-links');
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+const productWords = Array.from(document.querySelectorAll('.product-word-loop b'));
+let productWordIndex = 0;
+
+if (!reducedMotion && productWords.length > 1) {
+  window.setInterval(() => {
+    const currentWord = productWords[productWordIndex];
+    currentWord.classList.remove('is-active');
+    currentWord.classList.add('is-exiting');
+    productWordIndex = (productWordIndex + 1) % productWords.length;
+    productWords[productWordIndex].classList.add('is-active');
+    window.setTimeout(() => currentWord.classList.remove('is-exiting'), 650);
+  }, 2400);
+}
+
 const introSequence = [
   document.querySelector('.nav-shell'),
   document.querySelector('.hero-copy-panel .eyebrow'),
@@ -84,11 +98,6 @@ const translations = [
   ['.hero-actions .button-dark', 'Meet Neighbour <span>↗</span>', '了解 Neighbour <span>↗</span>'],
   ['.hero-actions .button-light', '<span class="play">▶</span> Our product standard', '<span class="play">▶</span> 我们的产品标准'],
   ['.trust-line > span', 'Designing useful software across industries', '为不同领域设计真正有用的软件'],
-  ['.trust-line b:nth-child(1)', 'PRODUCTIVITY', '效率工具'],
-  ['.trust-line b:nth-child(2)', 'COMMERCE', '商业'],
-  ['.trust-line b:nth-child(3)', 'LIFESTYLE', '生活方式'],
-  ['.trust-line b:nth-child(4)', 'COMMUNITY', '社区'],
-  ['.trust-line b:nth-child(5)', 'BUSINESS', '企业服务'],
   ['#how .kicker', 'THE NEIGHBOUR STANDARD', 'NEIGHBOUR 产品标准'],
   ['#how .section-heading h2', 'Refined time and again,<br>just to bring this care to you.', '千锤百炼，<br>只为了将这份心意带给你。'],
   ['#how .section-heading p', 'Every piece of software made by Neighbour is held to a high standard.', 'Neighbour出品的每一个软件都贯彻高标准。'],
