@@ -94,7 +94,6 @@ const translations = [
   ['#how .section-heading p', 'Every piece of software made by Neighbour is held to a high standard.', 'Neighbour出品的每一个软件都贯彻高标准。'],
   ['.feature-large h3', 'Focus on the<br>real problem.', '聚焦真正的问题。'],
   ['.feature-large .feature-copy > p', 'The problems that keep troubling you are exactly the ones we’re committed to solving.', '那些一直困扰着你的问题，是我们致力于解决的目标。'],
-  ['.feature-large .feature-copy > a', 'See how we decide <span>→</span>', '了解我们的取舍 <span>→</span>'],
   ['.mini-message b', 'Clear by default', '清晰，是默认设置'],
   ['.mini-message small', 'Focused · Useful · Considered', '聚焦 · 实用 · 克制'],
   ['.mini-reply b', 'Built around evidence', '尊重真实的用户证据'],
