@@ -112,7 +112,7 @@ const translations = [
   ['#join .cta-content > p', 'Curious about Neighbour, our products or what we are building next? We would be glad to hear from you.', '想了解 Neighbour、我们的产品，或我们接下来要做的事？欢迎随时来找我们。'],
   ['#join .postcode-form button', 'Talk to our team <span>↗</span>', '联系我们 <span>↗</span>'],
   ['#join .form-note', 'Based in Singapore. Building for everyone.', '立足新加坡，为每个人创造。'],
-  ['.footer > p', 'Small software, made to last.', '小而精，值得长期信赖。'],
+  ['.footer > p', 'That’s what neighbours are for.', '邻里之间，本应如此。'],
   ['.footer > div a:nth-child(2)', 'Contact', '联系我们'],
   ['.footer > div a:nth-child(3)', 'Privacy', '隐私政策'],
   ['.footer > div a:nth-child(4)', 'Terms', '使用条款']
