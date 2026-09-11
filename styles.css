@@ -94,3 +94,13 @@ html[lang="zh-CN"] #how .section-heading h2{line-height:1.08}
 /* One coherent icon language across the five process cards. */
 .process-icon{flex:0 0 40px;width:40px;height:40px;color:#fff}.process-icon svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.icon-focus{background:linear-gradient(135deg,#ffbf57,#ff965c)}.icon-evidence{background:linear-gradient(135deg,#7b69f5,#5869f2)}.icon-iterate{background:linear-gradient(135deg,#6675f5,#7a45ee)}.icon-security{background:linear-gradient(135deg,#4cc8aa,#5680ee)}.icon-care{background:linear-gradient(135deg,#ffb547,#f47a72)}
 .mini-reply>div{display:flex;flex-direction:column;min-width:0}.mini-reply small{width:auto;padding-left:0}.mini-message>div,.mini-insight>div,.mini-guard>div,.mini-care>div{min-width:0}
+
+/* A restrained, centred card deck with quieter depth and a steady rhythm. */
+.conversation-stack::before{content:"";position:absolute;inset:10% 5% 8%;border-radius:50%;background:radial-gradient(circle,rgba(88,105,242,.1),rgba(118,70,239,.035) 48%,transparent 72%);filter:blur(22px);pointer-events:none}
+.conversation-stack>.mini-message,.conversation-stack>.mini-reply,.conversation-stack>.mini-insight,.conversation-stack>.mini-guard,.conversation-stack>.mini-care{min-height:78px;padding:15px 20px;gap:14px;flex-wrap:nowrap;border-radius:18px;border-color:rgba(225,226,235,.9);background:rgba(255,255,255,.97);box-shadow:0 14px 34px rgba(44,42,82,.1)}
+.mini-message{--card-angle:.8deg}.mini-reply{--card-angle:-.8deg}.mini-insight{--card-angle:.55deg}.mini-guard{--card-angle:-.55deg}.mini-care{--card-angle:.3deg}
+.conversation-stack>.mini-message,.conversation-stack>.mini-insight,.conversation-stack>.mini-care{width:90%}.conversation-stack>.mini-reply,.conversation-stack>.mini-guard{width:86%}
+.conversation-stack>.mini-message{top:54px}.conversation-stack>.mini-reply{top:120px}.conversation-stack>.mini-insight{top:186px}.conversation-stack>.mini-guard{top:252px}.conversation-stack>.mini-care{top:318px}
+.conversation-stack>div b{font-size:15px;line-height:1.25;letter-spacing:-.015em}.conversation-stack>div small{margin-top:4px;line-height:1.25;letter-spacing:.01em}
+.conversation-stack>div:hover,.conversation-stack>div:focus-visible{transform:translateX(-50%) translateY(-14px) rotate(var(--card-angle)) scale(1.018);border-color:rgba(88,105,242,.22);box-shadow:0 24px 52px rgba(44,42,82,.17)}
+@media(max-width:800px){.feature-large{min-height:760px}.conversation-stack>.mini-message,.conversation-stack>.mini-insight,.conversation-stack>.mini-care{width:88%}.conversation-stack>.mini-reply,.conversation-stack>.mini-guard{width:82%}}
