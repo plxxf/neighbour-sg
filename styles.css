@@ -104,3 +104,6 @@ html[lang="zh-CN"] #how .section-heading h2{line-height:1.08}
 .conversation-stack>div b{font-size:15px;line-height:1.25;letter-spacing:-.015em}.conversation-stack>div small{margin-top:4px;line-height:1.25;letter-spacing:.01em}
 .conversation-stack>div:hover,.conversation-stack>div:focus-visible{transform:translateX(-50%) translateY(-14px) rotate(var(--card-angle)) scale(1.018);border-color:rgba(88,105,242,.22);box-shadow:0 24px 52px rgba(44,42,82,.17)}
 @media(max-width:800px){.feature-large{min-height:760px}.conversation-stack>.mini-message,.conversation-stack>.mini-insight,.conversation-stack>.mini-care{width:88%}.conversation-stack>.mini-reply,.conversation-stack>.mini-guard{width:82%}}
+
+.trust-line>span{color:#666977;font-size:13px;font-weight:600;line-height:1.5;letter-spacing:.14em}
+@media(max-width:620px){.trust-line>span{font-size:11px;letter-spacing:.1em}}
