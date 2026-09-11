@@ -107,3 +107,9 @@ html[lang="zh-CN"] #how .section-heading h2{line-height:1.08}
 
 .trust-line>span{color:#666977;font-size:13px;font-weight:600;line-height:1.5;letter-spacing:.14em}
 @media(max-width:620px){.trust-line>span{font-size:11px;letter-spacing:.1em}}
+
+/* Improve legibility without losing the light, layered character. */
+.conversation-stack>.mini-message,.conversation-stack>.mini-reply,.conversation-stack>.mini-insight,.conversation-stack>.mini-guard,.conversation-stack>.mini-care{min-height:86px;padding:16px 20px}
+.conversation-stack>.mini-message{top:48px}.conversation-stack>.mini-reply{top:124px}.conversation-stack>.mini-insight{top:200px}.conversation-stack>.mini-guard{top:276px}.conversation-stack>.mini-care{top:352px}
+.conversation-stack>div b{color:#171821;font-size:16px;font-weight:700;line-height:1.28}.conversation-stack>div small{color:#707381;font-size:12px;font-weight:500;line-height:1.35;letter-spacing:.015em}
+@media(max-width:620px){.conversation-stack>div b{font-size:15px}.conversation-stack>div small{font-size:11.5px}}
