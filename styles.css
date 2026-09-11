@@ -63,7 +63,7 @@ html[lang="zh-CN"] #how .section-heading h2{line-height:1.08}
 /* Rebalance the complete desktop hero composition without moving the navigation. */
 @media(min-width:901px){.hero-layout{transform:translateX(clamp(40px,5vw,90px))}.hero-copy-panel{top:-54px}}
 @media(min-width:801px){#join .cta-content{width:min(1000px,90%)}html[lang="zh-CN"] #join .cta-content>p{max-width:none;white-space:nowrap}html[lang="en"] #join .cta-content>p{width:min(760px,100%);max-width:760px;white-space:normal;text-align:left}}
-@media(min-width:521px) and (max-width:800px){.footer{min-height:150px;grid-template-columns:auto 1fr auto;padding:30px 0;gap:26px}.footer>p{display:none}.footer>div{justify-content:center;flex-wrap:wrap;gap:12px 20px}.footer>div a{font-size:13px;font-weight:600}.footer small{text-align:right}}
+@media(min-width:521px) and (max-width:800px){.footer{min-height:190px;grid-template-columns:auto 1fr;grid-template-areas:"brand tagline" "links copyright";padding:32px 0;gap:28px 34px}.footer>.brand{grid-area:brand}.footer>p{display:block;grid-area:tagline;margin:0;text-align:right}.footer>div{grid-area:links;justify-content:flex-start;flex-wrap:wrap;gap:12px 20px}.footer>div a{font-size:13px;font-weight:600}.footer small{grid-area:copyright;text-align:right}}
 @media(max-width:520px){.footer{min-height:0;grid-template-columns:1fr;padding:42px 0;gap:24px}.footer>p{display:block}.footer>div{justify-content:flex-start;flex-wrap:wrap}.footer small{text-align:left}}
 
 /* Keep the interactive mark inside a predictable square viewport. */

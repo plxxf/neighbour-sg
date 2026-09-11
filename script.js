@@ -51,8 +51,7 @@ const scrollRevealElements = document.querySelectorAll([
   '.feature-card',
   '.community-grid > *',
   '.quote-card',
-  '.cta-content',
-  '.footer > *'
+  '.cta-content'
 ].join(','));
 
 scrollRevealElements.forEach((element, index) => {
