@@ -3,20 +3,6 @@ const navLinks = document.querySelector('.nav-links');
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const productWords = Array.from(document.querySelectorAll('.product-word-loop b'));
-let productWordIndex = 0;
-
-if (!reducedMotion && productWords.length > 1) {
-  window.setInterval(() => {
-    const currentWord = productWords[productWordIndex];
-    currentWord.classList.remove('is-active');
-    currentWord.classList.add('is-exiting');
-    productWordIndex = (productWordIndex + 1) % productWords.length;
-    productWords[productWordIndex].classList.add('is-active');
-    window.setTimeout(() => currentWord.classList.remove('is-exiting'), 650);
-  }, 2400);
-}
-
 const introSequence = [
   document.querySelector('.nav-shell'),
   document.querySelector('.hero-copy-panel .eyebrow'),
