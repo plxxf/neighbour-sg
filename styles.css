@@ -56,6 +56,7 @@ html[lang="zh-CN"] .hero-copy-panel h1{letter-spacing:.025em}
 html[lang="en"] body,html[lang="en"] button,html[lang="en"] input,html[lang="en"] select,html[lang="en"] textarea{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
 html[lang="en"] body{letter-spacing:.012em}html[lang="en"] .hero-copy-panel h1{letter-spacing:-.035em}html[lang="en"] .section-heading h2,html[lang="en"] .community-section h2,html[lang="en"] .cta-section h2{letter-spacing:-.035em}html[lang="en"] .feature-card h3{letter-spacing:-.02em}
 html[lang="zh-CN"] body,html[lang="zh-CN"] button,html[lang="zh-CN"] input,html[lang="zh-CN"] select,html[lang="zh-CN"] textarea{font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif}
+html[lang="zh-CN"] #how .section-heading h2{line-height:1.08}
 #join .kicker{font-size:15px;font-weight:700;letter-spacing:.12em}
 @media(min-width:801px){#join .cta-content{width:min(1000px,90%)}html[lang="zh-CN"] #join .cta-content>p{max-width:none;white-space:nowrap}html[lang="en"] #join .cta-content>p{width:min(760px,100%);max-width:760px;white-space:normal;text-align:left}}
 @media(min-width:521px) and (max-width:800px){.footer{min-height:150px;grid-template-columns:auto 1fr auto;padding:30px 0;gap:26px}.footer>p{display:none}.footer>div{justify-content:center;flex-wrap:wrap;gap:12px 20px}.footer>div a{font-size:13px;font-weight:600}.footer small{text-align:right}}
