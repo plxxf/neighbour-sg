@@ -86,3 +86,7 @@ html[lang="zh-CN"] #how .section-heading h2{line-height:1.08}
 .conversation-stack>div:active{transform:translateX(-50%) translateY(-10px) rotate(var(--card-angle)) scale(.995);transition-duration:.12s}
 @media(prefers-reduced-motion:reduce){.conversation-stack>div{transition:none}.conversation-stack>div:hover,.conversation-stack>div:focus-visible{transform:translateX(-50%) rotate(var(--card-angle))}}
 @media(max-width:800px){.feature-large{min-height:850px}.conversation-stack>.mini-message,.conversation-stack>.mini-reply,.conversation-stack>.mini-insight,.conversation-stack>.mini-guard,.conversation-stack>.mini-care{width:86%}}
+
+/* Bring the closing call-to-action closer to the preceding story card. */
+.stories{padding-bottom:72px}
+@media(max-width:800px){.stories{padding-bottom:56px}}
