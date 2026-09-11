@@ -120,3 +120,5 @@ html[lang="zh-CN"] #how .section-heading h2{line-height:1.08}
 /* Rebalance the visual after reducing the principle deck to three cards. */
 .conversation-stack>.mini-message{top:108px}.conversation-stack>.mini-insight{top:198px}.conversation-stack>.mini-guard{top:288px}
 @media(max-width:800px){.feature-large{min-height:700px}.conversation-stack>.mini-message{top:46px}.conversation-stack>.mini-insight{top:142px}.conversation-stack>.mini-guard{top:238px}}
+
+#how .feature-grid{width:min(100%,1040px);margin-inline:auto}
