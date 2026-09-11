@@ -1,6 +1,3 @@
-const menuButton = document.querySelector('.menu-button');
-const navLinks = document.querySelector('.nav-links');
-
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const heroModelFrame = document.querySelector('.hero-model');
 let heroModelLeft = null;
@@ -87,12 +84,6 @@ if (reducedMotion || !('IntersectionObserver' in window)) {
   scrollRevealElements.forEach(element => revealObserver.observe(element));
 }
 
-menuButton.addEventListener('click', () => {
-  const open = menuButton.getAttribute('aria-expanded') === 'true';
-  menuButton.setAttribute('aria-expanded', String(!open));
-  navLinks.classList.toggle('is-open', !open);
-});
-
 document.querySelector('.postcode-form').addEventListener('submit', (event) => {
   event.preventDefault();
   const input = event.currentTarget.querySelector('input');
@@ -113,8 +104,6 @@ document.querySelector('.postcode-form').addEventListener('submit', (event) => {
 
 const langToggle = document.querySelector('.lang-toggle');
 const translations = [
-  ['.nav-links a:nth-child(1)', 'Our standard', '产品标准'],
-  ['.nav-links a:nth-child(2)', 'Why Neighbour', '为什么选择 Neighbour'],
   ['.nav-cta', 'Work with us <span>↗</span>', '与我们合作 <span>↗</span>'],
   ['.eyebrow', '<span class="status-dot"></span> A software company from Singapore', '<span class="status-dot"></span> 一家来自新加坡的软件公司'],
   ['.hero-copy-panel h1', 'Hi, I\'m <img class="hero-wordmark" src="assets/neighbour-logo.svg?v=approved-1" alt="Neighbour">', '你好，<br>欢迎来到<span>邻里</span>'],
