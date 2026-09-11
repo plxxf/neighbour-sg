@@ -13,7 +13,14 @@ s.add(new THREE.HemisphereLight('#fffaf0','#b9b2a4',.82));let k=new THREE.Direct
 const pointer=new THREE.Vector2(),raycaster=new THREE.Raycaster(),modelPlane=new THREE.Plane(new THREE.Vector3(0,0,1),-1.05),hit=new THREE.Vector3();
 const halo=new THREE.Mesh(new THREE.SphereGeometry(.15,32,32),new THREE.MeshBasicMaterial({color:'#ffd69a',transparent:true,opacity:.1,blending:THREE.AdditiveBlending,depthWrite:false,depthTest:false,toneMapped:false}));halo.renderOrder=9;s.add(halo);
 const mouseLights=[['#ffe0ad',0,27],['#ffbd78',.03,6]].map(([color,dx,intensity])=>{const light=new THREE.PointLight(color,intensity,3.5,2.15);light.userData.dx=dx;s.add(light);return light});
-let amberDot=null,dotHome=null,dotTarget=null,dotLocalCenter=new THREE.Vector3(),pointerInside=false;
+let amberDot=null,dotHome=null,dotTarget=null,dotLocalCenter=new THREE.Vector3(),pointerInside=false,modelRoot=null;
+function reportModelBounds(){
+  if(!embedded||!modelRoot||parent===window)return;
+  modelRoot.updateWorldMatrix(true,true);c.updateMatrixWorld();
+  const box=new THREE.Box3().setFromObject(modelRoot),xs=[];
+  for(const x of[box.min.x,box.max.x])for(const y of[box.min.y,box.max.y])for(const z of[box.min.z,box.max.z]){const point=new THREE.Vector3(x,y,z).project(c);xs.push((point.x+1)*innerWidth/2)}
+  parent.postMessage({type:'neighbour-model-bounds',left:Math.max(0,Math.min(...xs))},location.origin);
+}
 function updateLight(e){
   pointer.x=e.clientX/innerWidth*2-1;pointer.y=1-e.clientY/innerHeight*2;raycaster.setFromCamera(pointer,c);
   if(!raycaster.ray.intersectPlane(modelPlane,hit))return;
@@ -23,14 +30,15 @@ r.domElement.addEventListener('pointermove',updateLight);
 r.domElement.addEventListener('pointerleave',()=>{pointerInside=false;if(dotHome)dotTarget.copy(dotHome)});
 r.domElement.addEventListener('pointerenter',e=>{pointerInside=true;updateLight(e)});
 new GLTFLoader().load('../assets/models/neighbour-glass-rainbow-v5.glb',g=>{
-  s.add(g.scene);g.scene.traverse(o=>{
+  modelRoot=g.scene;s.add(modelRoot);modelRoot.traverse(o=>{
     if(!o.isMesh)return;
     if(o.material?.name==='Amber optical glass')amberDot=o;
   });
   if(amberDot){amberDot.geometry.computeBoundingBox();amberDot.geometry.boundingBox.getCenter(dotLocalCenter);dotHome=amberDot.position.clone();dotTarget=dotHome.clone();}
+  requestAnimationFrame(reportModelBounds);
 });
 function animate(){requestAnimationFrame(animate);controls.update();
   if(amberDot&&dotTarget){amberDot.position.lerp(dotTarget,pointerInside?.22:.075);const p=dotLocalCenter.clone().add(amberDot.position);halo.position.copy(p);mouseLights.forEach(light=>light.position.copy(p).add(new THREE.Vector3(light.userData.dx,0,.12)))}
   r.render(s,c)}animate();
-addEventListener('resize',()=>{c.aspect=innerWidth/innerHeight;c.updateProjectionMatrix();r.setSize(innerWidth,innerHeight)});
+addEventListener('resize',()=>{c.aspect=innerWidth/innerHeight;c.updateProjectionMatrix();r.setSize(innerWidth,innerHeight);requestAnimationFrame(reportModelBounds)});
 </script><div class="hint">黄色玻璃跟随鼠标并照亮画面 · 移出后自动归位</div></body></html>

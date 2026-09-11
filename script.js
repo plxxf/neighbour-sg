@@ -2,6 +2,35 @@ const menuButton = document.querySelector('.menu-button');
 const navLinks = document.querySelector('.nav-links');
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const heroModelFrame = document.querySelector('.hero-model');
+let heroModelLeft = null;
+
+function fitHeroTitleToModel() {
+  const title = document.querySelector('.hero-copy-panel h1');
+  const wordmark = title?.querySelector('.hero-wordmark');
+  if (!title) return;
+  if (window.innerWidth <= 900 || document.documentElement.lang !== 'en' || !wordmark || heroModelLeft === null) {
+    title.style.removeProperty('font-size');
+    return;
+  }
+  const titleRect = title.getBoundingClientRect();
+  const wordmarkRect = wordmark.getBoundingClientRect();
+  const modelRect = heroModelFrame.getBoundingClientRect();
+  const contentWidth = wordmarkRect.right - titleRect.left;
+  const availableWidth = modelRect.left + heroModelLeft - titleRect.left - 12;
+  const currentSize = parseFloat(getComputedStyle(title).fontSize);
+  if (contentWidth <= 0 || availableWidth <= 0 || !Number.isFinite(currentSize)) return;
+  const fittedSize = Math.max(72, Math.min(120, currentSize * availableWidth / contentWidth));
+  title.style.fontSize = `${fittedSize}px`;
+}
+
+window.addEventListener('message', event => {
+  if (event.origin !== window.location.origin || event.source !== heroModelFrame?.contentWindow || event.data?.type !== 'neighbour-model-bounds') return;
+  heroModelLeft = Number(event.data.left);
+  if (Number.isFinite(heroModelLeft)) requestAnimationFrame(fitHeroTitleToModel);
+});
+
+window.addEventListener('resize', () => requestAnimationFrame(fitHeroTitleToModel));
 
 const introSequence = [
   document.querySelector('.nav-shell'),
@@ -168,6 +197,7 @@ function setLanguage(language) {
   langToggle.setAttribute('aria-label', isChinese ? 'Switch to English' : '切换为中文');
   localStorage.setItem('neighbour-language', isChinese ? 'zh-CN' : 'en');
   renderPrinciple();
+  requestAnimationFrame(fitHeroTitleToModel);
 }
 
 const savedLanguage = localStorage.getItem('neighbour-language');
